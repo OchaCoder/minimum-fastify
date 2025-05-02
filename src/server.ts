@@ -15,7 +15,7 @@ fastify.get("/test", (request, reply) => reply.status(200).send("The request is 
 // Start the server
 const startServer = async () => {
   try {
-    fastify.listen({ port: config.PORT })
+    fastify.listen({ port: config.PORT, host: "0.0.0.0" })
     await fastify.ready()
 
     console.log(`Fastify is listening on port ${config.PORT}`)
